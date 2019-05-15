@@ -17,7 +17,7 @@ var app = express();
 // bitcoinapi
 bitcoinapi.setWalletDetails(settings.wallet);
 if (settings.heavy != true) {
-  bitcoinapi.setAccess('only', ['getinfo', 'getnetworkghps', 'getmininginfo','getdifficulty', 'getconnectioncount',
+  bitcoinapi.setAccess('only', ['getinfo', 'getnetworkhashps', 'getmininginfo','getdifficulty', 'getconnectioncount',
     'getblockcount', 'getblockhash', 'getblock', 'getrawtransaction', 'getpeerinfo', 'gettxoutsetinfo',
     'sendrawtransaction','getrawmempool']);
 } else {
@@ -33,7 +33,7 @@ if (settings.heavy != true) {
     getsupply - Returns the current money supply.
     getmaxmoney - Returns the maximum possible money supply.
   */
-  bitcoinapi.setAccess('only', ['getinfo', 'getstakinginfo', 'getnetworkghps', 'getdifficulty', 'getconnectioncount',
+  bitcoinapi.setAccess('only', ['getinfo', 'getstakinginfo', 'getnetworkhashps', 'getdifficulty', 'getconnectioncount',
     'getblockcount', 'getblockhash', 'getblock', 'getrawtransaction','getmaxmoney', 'getvote',
     'getmaxvote', 'getphase', 'getreward', 'getnextrewardestimate', 'getnextrewardwhenstr',
     'getnextrewardwhensec', 'getsupply', 'gettxoutsetinfo']);
@@ -77,14 +77,14 @@ app.use('/ext/getmoneysupply', function(req,res){
     res.send(' '+supply);
   });
 });
-
+/*
 app.use('/ext/zmqsend/:data', function(req,res){
   lib.send_zmq(req.param('data'), function(result){
 	console.log("sent with result", result);
 	});
   res.send("ok");
 });
-
+*/
 app.use('/ext/txinfo/:hash', function(req,res){
   db.get_tx(req.param('hash'), function(tx){
     if (tx) {

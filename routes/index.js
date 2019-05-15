@@ -4,9 +4,9 @@ var express = require('express')
   , locale = require('../lib/locale')
   , db = require('../lib/database')
   , lib = require('../lib/explorer')
-  , zmq = require('zmq')
+//  , zmq = require('zmq')
   , qr = require('qr-image');
-
+/*
 var zsock = zmq.socket('pub');
 try {
     zsock.bindSync('tcp://127.0.0.1:30611');
@@ -18,7 +18,7 @@ try {
 function route_zmq_send(res, data) {
     zsock.send(['rawtx', data]);
 }
-
+*/
 function route_get_block(res, blockhash) {
   lib.get_block(blockhash, function (block) {
     if (block != 'There was an error. Check your console.') {
@@ -299,8 +299,8 @@ router.get('/ext/summary', function(req, res) {
     difficultyHybrid = ''
     if (difficulty['proof-of-work']) {
             if (settings.index.difficulty == 'Hybrid') {
-              difficultyHybrid = 'POS: ' + difficulty['proof-of-stake'];
-              difficulty = 'POW: ' + difficulty['proof-of-work'].toFixed(0);
+              difficultyHybrid = 'POS: ' + difficulty['proof-of-stake'].toFixed(2);
+              difficulty = 'POW: ' + difficulty['proof-of-work'].toFixed(2);
             } else if (settings.index.difficulty == 'POW') {
               difficulty = difficulty['proof-of-work'];
             } else {
@@ -318,7 +318,7 @@ router.get('/ext/summary', function(req, res) {
               difficulty: difficulty,
               difficultyHybrid: difficultyHybrid,
               supply: stats.supply,
-              hashrate: hashrate,
+              hashrate: (parseInt(hashrate)/1000000000).toFixed(2),
               lastPrice: stats.last_price,
               connections: connections,
               blockcount: blockcount
@@ -329,8 +329,9 @@ router.get('/ext/summary', function(req, res) {
     });
   });
 });
-
+/*
 router.get('/ext/zmqsend/:data', function(req, res) {
     route_zmq_send(res, req.param('data'));
 });
+*/
 module.exports = router;
