@@ -1,11 +1,11 @@
-Iquidus Explorer - 1.7
+Iquidus Explorer - 1.7 for Audiocoin
 ================
 
 An open source block explorer written in node.js.
 
 ### See it in action
 
-*  [Peercoin](https://explorer.peercoin.net)
+*  [Audiocoin]( http://adcexp.cryptooz.com )
 
 ### Requires
 
@@ -33,7 +33,7 @@ Create user with read/write access:
 
 ### Get the source
 
-    git clone https://github.com/sparklecoin/explorer explorer
+    git clone https://github.com/cryptooz/adc-explorer explorer
 
 ### Install node modules
 
@@ -128,6 +128,7 @@ Where [SIZE] is an integer higher than the default.
 Copyright (c) 2015, Iquidus Technology  
 Copyright (c) 2015, Luke Williams  
 Copyright (c) 2018, Sparklecoin Inc
+Copyright (c) 2019, Cryptooz
 
 All rights reserved.
 

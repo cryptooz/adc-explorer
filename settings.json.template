@@ -5,15 +5,15 @@
 */
 {
   // name your instance!
-  "title": "iquidus explorer",
+  "title": "ADC explorer",
 
   "address": "APP_URL",
 
   // coin name
-  "coin": "Sparklecoin",
+  "coin": "Audiocoin",
 
   // coin symbol
-  "symbol": "SPRK",
+  "symbol": "ADC",
 
   // logo
   "logo": "/images/logo.png",
@@ -53,7 +53,7 @@
   },
 
   // confirmations
-  "confirmations": 6,
+  "confirmations": 55,
 
   // language settings
   "locale": "locale/en.json",
@@ -80,22 +80,22 @@
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 187,
-    "blockhash": "000000099c183c2553f42c91d036243111240d7831c39e74c1cf700e6630b093",
-    "txhash": "917ada384fcceff4dced9428e49ab5148ebe389aa0e34921f882e19ec7e0ecf6",
-    "address": "tRbDZnwrfWyhGbETreAeVm4BBzJox8fm8Y"
+    "blockindex": 4543,
+    "blockhash": "000000007b19dd24a534b1cd47a696b73a047c3c30af6ffbe84db49d801c927d",
+    "txhash": "eb3d695252defe875b4420325cfac9d3aa3d2617e9198fdedba694c946162365",
+    "address": "AdSDtQJ8NKT5t3i9kPqa7mgZPnDqVuK3oX"
   },
 
   // market settings
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "SPRK",
+    "coin": "ADC",
     "exchange": "BTC",
-    "enabled": ["bittrex"],
+    "enabled": ["yobit"],
     "cryptopia_id": "1658",
     "ccex_key" : "Get-Your-Own-Key",
-    "default": "bittrex"
+    "default": "yobit"
   },
 
   // richlist/top100 settings
@@ -110,18 +110,18 @@
   // high flag: greater than this value flagged red
   "movement": {
     "min_amount": 101,
-    "low_flag": 500,
-    "high_flag": 1000
+    "low_flag": 5000,
+    "high_flag": 100000
   },
 
   // twitter, facebook, googleplus
-  "twitter": "iquidus",
-  "facebook": "yourfacebookpage",
+  "twitter": "adcaudiocoin",
+  "facebook": "ADCdigitalcurrency",
   "googleplus": "yourgooglepluspage",
 
   //genesis
-  "genesis_tx": "096b93c547a625d4a671ff804375c74e16929f4b7353cbacc0bb46a3ec77f21b",
-  "genesis_block": "00000000e7a2418a21c3b3042794cef19d88b9587ebff903f3b6b204940113a3",
+  "genesis_tx": "77e4b157ed08be1836b38295aefc49da8608431dd0407df8f52ca492ca3266dc",
+  "genesis_block": "000003d9347a2ed183e9167c5e3d6932530886401bd7769b991c40e6962f85d6",
 
   //heavy (enable/disable additional heavy features)
   "heavy": false,
@@ -130,7 +130,7 @@
   "txcount": 100,
 
   //show total sent & received on address page (set false if PoS)
-  "show_sent_received": true,
+  "show_sent_received": false,
 
   // how to calculate current coin supply
   // COINBASE : total sent from coinbase (PoW)
@@ -143,7 +143,7 @@
   // how to acquire network hashrate
   // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
   // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
-  "nethash": "getnetworkghps",
+  "nethash": "getmininginfo",
 
   // nethash unitd: sets nethash API return units
   // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
@@ -157,6 +157,5 @@
   "labels": {
   //  "JSoEdU717hvz8KQVq2HfcqV9A79Wihzusu": {"label": "Developers address", "type":"primary", "url":"http://example.com"},
   //  "JSWVXHWeYNknPdG9uDrcBoZHztKMFCsndw": {"label": "Cryptsy"}
-      "tTheBurnAddressForSPRKoinsAdeCoLae": {"label": "This is a burn address", "type":"danger"}
   }
 }
