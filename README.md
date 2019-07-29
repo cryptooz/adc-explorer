@@ -12,7 +12,7 @@ An open source block explorer written in node.js.
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
 *  *coind
-
+*  sudo apt-get install libzmq-dev
 ### Create database
 
 Enter MongoDB cli:
